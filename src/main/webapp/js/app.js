@@ -10,10 +10,10 @@ define(function(require){
     var directives = require('./directive/directives');
 
     //var app = angular.module('likeastore', ['services', 'controllers', 'directives']);
-    var app = angular.module('likeastore', ['ngRoute','services','controllers','directives']);
+    var app = angular.module('ContactsApp', ['ngRoute','services','controllers','directives']);
 
     app.start = function () {
-        angular.bootstrap(document, ['likeastore']);
+        angular.bootstrap(document, ['ContactsApp']);
     };
 
     app.config(['$routeProvider', '$locationProvider', '$httpProvider',
@@ -31,10 +31,6 @@ define(function(require){
             $locationProvider.html5Mode(true);
         }
     ]);
-
-    app.run(function($window){
-
-    });
 
     return app;
 });

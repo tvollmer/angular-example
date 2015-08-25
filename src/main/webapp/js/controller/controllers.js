@@ -1,24 +1,24 @@
 define(['angular'], function (ng) {
 
     return ng.module('controllers', ['services']).
-        controller('homeController', function ($scope) {
-            $scope.title = "angularAMD";
+        controller('homeController', function ($rootScope, $scope) {
+            $rootScope.title = "angularAMD home";
             $scope.message = "Hello World";
             console.log('home was called');
 
         }).
-        controller('view1Controller', function($scope) {
-            $scope.title = "angularAMD";
+        controller('view1Controller', function($rootScope, $scope) {
+            $rootScope.title = "angularAMD view1";
             $scope.message = "Hello from view1";
             console.log('view1 was called');
         }).
-        controller('view2Controller', function($scope) {
-            $scope.title = "angularAMD";
+        controller('view2Controller', function($rootScope, $scope) {
+            $rootScope.title = "angularAMD view2";
             $scope.message = "Hello from view2";
             console.log('view2 was called');
         }).
-        controller('view3Controller', function($scope, $http, $location, $interpolate, contactService) {
-            $scope.title = "angularAMD";
+        controller('view3Controller', function($rootScope, $scope, $interpolate, contactService) {
+            $rootScope.title = "angularAMD view3";
 
             // @see Angularjs Data Model : http://www.webdeveasy.com/angularjs-data-model/
             contactService.findById('3')
